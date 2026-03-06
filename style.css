@@ -1,47 +1,101 @@
-/* Kopiere dies in deine style.css */
 :root {
-    --black: #000000;
-    --white: #ffffff;
+    --primary: #000000;
+    --secondary: #ffffff;
+    --gray: #f9f9f9;
 }
 
 body {
-    font-family: 'Arial Black', sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 0;
-    background-color: var(--white);
-    color: var(--black);
+    line-height: 1.6;
+    color: var(--primary);
+    background: var(--secondary);
 }
 
 header {
-    background-color: var(--black);
-    color: var(--white);
-    padding: 40px 20px;
+    background: var(--primary);
+    color: var(--secondary);
+    padding: 3rem 1rem;
     text-align: center;
 }
 
+nav {
+    margin-top: 20px;
+}
+
 nav a {
-    color: var(--white);
+    color: var(--secondary);
     text-decoration: none;
     margin: 0 15px;
-    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
 }
 
 .container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 20px;
 }
 
 .hero {
-    border: 5px solid var(--black);
-    padding: 40px;
-    margin-bottom: 40px;
+    text-align: center;
+    padding: 3rem 0;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #eee;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
 }
 
 .btn {
-    background-color: var(--black);
-    color: var(--white);
-    padding: 20px 40px;
-    text-decoration: none;
     display: inline-block;
+    background: var(--primary);
+    color: var(--secondary);
+    padding: 1.2rem 2.5rem;
+    text-decoration: none;
     font-weight: bold;
+    margin-top: 2rem;
+    border-radius: 5px;
+    transition: transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.grid div {
+    border: 1px solid #ddd;
+    padding: 30px;
+    border-radius: 8px;
+    background: var(--gray);
+    transition: border-color 0.3s ease;
+}
+
+.grid div:hover {
+    border-color: var(--primary);
+}
+
+footer {
+    margin-top: 6rem;
+    padding: 3rem;
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
+
+/* Für Handys optimiert */
+@media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+    .hero h2 { font-size: 1.8rem; }
 }
